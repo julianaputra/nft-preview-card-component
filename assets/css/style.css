@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-weight: 300;
+}
+
+body {
+    background-color: hsl(217, 54%, 11%);
+    font-size: 18px;
+    padding: 36px 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.preview-card {
+    background-color: hsl(216, 50%, 16%);
+    padding: 24px;
+    width: 100%;
+    max-width: 375px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.preview-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-card__image-container {
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+    border-radius: 10px;    
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.preview-card__image-overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(178, 100%, 50%);
+    transition: opacity .3s ease;
+    opacity: 0;
+}
+
+.preview-card__image-overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.preview-card__image-container:hover {
+    cursor: pointer;
+}
+
+.preview-card__image-container:hover .preview-card__image-overlay {
+    opacity: .5;
+}
+
+.preview-card__image-container:hover .preview-card__image-overlay-icon {
+    opacity: 1;
+}
+
+.preview-card__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+.preview-card__title:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.preview-card__desc {
+    color: hsl(215, 51%, 70%);
+    margin-bottom: 12px;
+}
+
+.preview-card__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview-card__detail-item {
+    display: flex;
+    align-items: center;
+    color: hsl(215, 51%, 70%);
+}
+
+.preview-card__detail-item--eth {
+    color: hsl(178, 100%, 50%);
+    font-weight: 400;
+}
+
+.preview-card__detail-icon {
+    margin-right: 6px;
+}
+
+.preview-card__creator {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 16px;
+    position: relative;
+}
+
+.preview-card__creator::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: hsl(215, 51%, 70%);
+}
+
+.preview-card__creator-caption {
+    color: hsl(215, 51%, 70%);
+}
+
+.preview-card__creator-link {
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.preview-card__creator-link:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.preview-card__creator-avatar {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    margin-right: 12px;
+}
